@@ -95,8 +95,7 @@ if uploaded_file is not None:
                             if row and len(row) > 0:  # Check if the row is valid
                                 items.append(", ".join(filter(None, row)))  # Join non-empty cells
 
-        elif uploaded_file.type in ["application/vnd.openxmlformats-officedocument.wordprocessingml.document", 
-                                      "application/msword"]:
+        elif uploaded_file.type in ["application/vnd.openxmlformats-officedocument.wordprocessingml.document","application/msword"]:
             doc = Document(uploaded_file)
             invoice_data = extract_invoice_data_from_word(doc)
 
